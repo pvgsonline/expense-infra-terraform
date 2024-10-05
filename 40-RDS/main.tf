@@ -1,24 +1,26 @@
 module "db" {
   source = "terraform-aws-modules/rds/aws"
 
+  identifier = local.resource_name 
+
   engine            = "mysql"
   engine_version    = "8.0"
   instance_class    = "db.t3.small"
   allocated_storage = 5
 
-  db_name  = local.resource_name
-  username = "user"
+  db_name  = "transactions"
+  username = "root"
   manage_master_user_password = false
   password = "ExpenseApp1"
   port     = "3306"
 
 
-  vpc_security_group_ids = local.mysql_sg_id
+  vpc_security_group_ids = [local.db_sg_id]
 
   tags = var.common_tags
 
   # DB subnet group
- db_subnet_group_id = local.db_subnet_group_name
+ db_subnet_group_name = local.database_subnet_group_name
 
   # DB parameter group
   family = "mysql8.0"

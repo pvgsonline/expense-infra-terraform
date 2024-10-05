@@ -1,5 +1,5 @@
 module "bastion" {
-  source  = "git::https://github.com/pvgsonline/terraform-aws-ec2.git?ref=main"
+  source  = "terraform-aws-modules/ec2-instance/aws"
 
   name = local.resource_name
   ami                    = data.aws_ami.rhel.id
