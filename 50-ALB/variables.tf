@@ -20,5 +20,3 @@ variable "zone_name"{
 }
 
 
-
-

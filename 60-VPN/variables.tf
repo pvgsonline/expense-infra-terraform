@@ -15,10 +15,6 @@ variable "environment" {
     default = "dev"
 }
 
-variable "zone_name"{
-    default = "pvgs.online"
-}
-
 
 
 
