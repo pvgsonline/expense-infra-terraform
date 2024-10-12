@@ -7,4 +7,4 @@ echo "component is $component and environment is $environment"
 
 dnf install ansible -y
 
-git pull -i localhost, -U https://github.com/pvgsonline/terraform-expense-roles.git mail.yaml -e component=$component -e environment=$environment
+ansible-pull -i localhost, -U https://github.com/pvgsonline/terraform-expense-roles.git main.yaml -e component=$component -e environment=$environment

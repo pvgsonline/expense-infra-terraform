@@ -67,7 +67,7 @@ module "records" {
 
   records = [
     {
-      name    = "mysql"
+      name    = "mysql-${var.environment}"
       type    = "CNAME"
       ttl     = 1
       records = [module.db.db_instance_address]
