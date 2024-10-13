@@ -6,6 +6,14 @@ data "aws_ssm_parameter" "private_subnet_id" {
  name = "/${var.project_name}/${var.environment}/private_subnet_id"
 }
 
+data "aws_ssm_parameter" "vpc_id" {
+ name = "/${var.project_name}/${var.environment}/vpc_id"
+}
+
+data "aws_ssm_parameter" "app_alb_listener_arn" {
+ name = "/${var.project_name}/${var.environment}/app_alb_listener_arn"
+}
+
 data "aws_ami" "rhel" {
   most_recent      = true
   owners           = ["973714476881"]

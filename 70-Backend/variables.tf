@@ -19,6 +19,10 @@ variable "component"{
     default = "backend"
 }
 
+variable "zone_name"{
+    default = "pvgs.online"
+}
+
 
 
 
