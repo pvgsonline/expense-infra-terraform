@@ -1,6 +1,6 @@
 module "web_alb" {
   source = "terraform-aws-modules/alb/aws"
-
+  
   internal=false
   enable_deletion_protection = false
   name    = local.resource_name
@@ -45,7 +45,7 @@ resource "aws_lb_listener" "https" {
 
     fixed_response {
       content_type = "text/html"
-      message_body = "<h1>hello this is a load balancer</h1>"
+      message_body = "<h1>hello this is a load balancer for https</h1>"
       status_code  = "200"
     }
   }
